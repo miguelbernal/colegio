@@ -17,6 +17,14 @@ app.get('/electronica', (req, res) => {
     var title = app.get('appName')+" | Electrónica"
     res.render('electronica.ejs', {title: title} )
 })
+app.get('/electricidad', (req, res) => {
+    var title = app.get('appName')+" | Electricidad"
+    res.render('electricidad.ejs', {title: title} )
+})
+app.get('/contacto', (req, res) => {
+    var title = app.get('appName')+" | Contacto"
+    res.render('contacto.ejs', {title: title} )
+})
 // Levanta el servidor
 app.listen(app.get('port'), () => {
     console.log(`Server on port ${app.get('port')}`)
