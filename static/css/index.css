@@ -1,0 +1,10 @@
+.card-deck, .row{
+    margin-right: 0;
+    margin-left: 0;
+}
+.pie{
+    background-color: grey;
+    height: 120px;
+    color: wheat;
+    padding-top: 20px;
+}
