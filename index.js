@@ -10,10 +10,9 @@ app.set('view engine','ejs')
 // Configurara la carpeta de static
 app.use(express.static('static'))
 // para poder usar json en la peticiones del cliente para que el servidor lo reconozca
-app.use(express.json({
-    extended: true,
-    limit: '50mb'
-}));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
 // Ruta principal
 app.get('/', (req, res) => {
     var title = app.get('appName')
@@ -35,6 +34,12 @@ app.get('/contacto', (req, res) => {
 app.get('/admin', (req, res) => {
     var title = app.get('appName')+" | Admin"
     res.render('admin.ejs', {title: title} )
+})
+
+// menu
+app.get('/menu', (req, res) => {
+    var title = app.get('appName')+" | Menu"
+    res.render('menu.ejs', {title: title} )
 })
 
 // servidor (api)

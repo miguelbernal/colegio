@@ -3,6 +3,7 @@ const mysql = require("mysql");
 var router = express.Router();
 
 router.post('/login', function(req, res, next) {
+    console.log(req.body)
     usuario_usuario =  req.body.usuario_usuario;
     clave_usuario   = req.body.clave_usuario;
     console.log(usuario_usuario + " - " + clave_usuario)

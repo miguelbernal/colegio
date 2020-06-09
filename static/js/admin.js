@@ -9,7 +9,8 @@ function ingresar() {
     var data = { usuario_usuario: usuario_usuario, clave_usuario: clave_usuario };
     var parametros = {
         method: 'POST',
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
+        headers: { "Content-Type": "application/json" }
     };
     fetch(url, parametros)
         .then(function (response) {
