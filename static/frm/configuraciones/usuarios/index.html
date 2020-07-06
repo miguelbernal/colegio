@@ -17,35 +17,8 @@
                     </th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Nombre1</td>
-                    <td>Usuario1</td>
-                    <td>Contraseña1</td>
-                    <td style="text-align: center;">
-                        <button type="button" class="btn btn-warning btn-sm" onclick="agregar()" >
-                            <i class="fas fa-pencil-alt"></i>
-                        </button>
-                        <button type="button" class="btn btn-warning btn-sm" onclick="agregar()" >
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Nombre2</td>
-                    <td>Usuario2</td>
-                    <td>Contraseña2</td>
-                    <td>
-                        <button type="button" class="btn btn-warning btn-sm" onclick="agregar()" >
-                            <i class="fas fa-pencil-alt"></i>
-                        </button>
-                        <button type="button" class="btn btn-warning btn-sm" onclick="agregar()" >
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </td>
-                </tr>
+            <tbody id="tbody_datos">
+                
             </tbody>
         </table>
     </div>
@@ -53,3 +26,59 @@
         <button type="button" class="btn btn-warning btn-sm" onclick="salir_formulario()" >Salir</button>
     </div>
 </div>
+
+<div class="modal fade" id="myModalOperaciones" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Agregar</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+              <div class="col-md-2">
+                  <label for="id_usuario">Id</label>
+              </div>
+              <div class="col-md-2">
+                  <input id="id_usuario" type="text" class="form-control form-control-sm" readonly>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-md-2">
+                <label for="nombre_usuario">Nombre</label>
+            </div>
+            <div class="col-md-10">
+                <input id="nombre_usuario" type="text" class="form-control form-control-sm">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-2">
+                <label for="usuario_usuario">Usuario</label>
+            </div>
+            <div class="col-md-10">
+                <input id="usuario_usuario" type="text" class="form-control form-control-sm">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-2">
+                <label for="clave_usuario">contraseña</label>
+            </div>
+            <div class="col-md-10">
+                <input id="clave_usuario" type="password" class="form-control form-control-sm">
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" id="boton_operacion" class="btn btn-primary">Agregar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+    $.getScript("frm/configuraciones/usuarios/js/scripts.js")
+</script>
